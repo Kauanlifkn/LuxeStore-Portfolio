@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE STORE | Moda & Lifestyle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="toast-container"></div>
+
+    <header>
+        <div class="logo">LUXE<span>STORE</span></div>
+        
+        <nav class="navbar" id="navbar">
+            <a href="#" class="active" onclick="filterCategory('todos', this)">Home</a>
+            <a href="#" onclick="filterCategory('masculino', this)">Masculino</a>
+            <a href="#" onclick="filterCategory('feminino', this)">Feminino</a>
+            <a href="#" onclick="filterCategory('calcados', this)">Calçados</a>
+            <a href="#" onclick="filterCategory('acessorios', this)">Acessórios</a>
+            <button class="close-menu-mobile" onclick="toggleMenu()">✕</button>
+        </nav>
+
+        <div class="header-actions">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Buscar..." oninput="buscarProduto()">
+                <span>🔍</span>
+            </div>
+            <div class="icons">
+                <div class="icon-wrap" onclick="toggleCart(true)">
+                    <span>🛍️</span>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </div>
+                <div class="menu-hamburger" onclick="toggleMenu()">☰</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="tagline">Coleção 2026</span>
+            <h1>Moda Contemporânea &<br>Estilo Atemporal</h1>
+            <p>Elegância e conforto em cada detalhe.</p>
+            <button class="btn-primary" onclick="scrollToProducts()">Ver Coleção</button>
+        </div>
+    </section>
+
+    <div class="categories-bar">
+        <button class="cat-btn active" onclick="filterCategory('todos', this)">Todos</button>
+        <button class="cat-btn" onclick="filterCategory('masculino', this)">Masculino</button>
+        <button class="cat-btn" onclick="filterCategory('feminino', this)">Feminino</button>
+        <button class="cat-btn" onclick="filterCategory('calcados', this)">Calçados</button>
+        <button class="cat-btn" onclick="filterCategory('acessorios', this)">Acessórios</button>
+    </div>
+
+    <section id="productsGrid" class="products-grid"></section>
+
+    <div class="modal" id="modalProduct">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()">✕</span>
+            <div class="modal-body" id="modalBody">
+                </div>
+            
+            <div class="related-section">
+                <h3>Você também pode gostar</h3>
+                <div class="related-grid" id="relatedProducts"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <strong>Sua Sacola</strong>
+            <button onclick="toggleCart(false)">✕</button>
+        </div>
+        <div class="drawer-body" id="cartItems"></div>
+        <div class="drawer-footer">
+            <div class="total-row">
+                <strong>Total:</strong><span id="totalValue">R$ 0,00</span>
+            </div>
+            <button class="btn-checkout" onclick="finalizarPedido()">Finalizar Compra</button>
+        </div>
+    </div>
+    <div class="overlay-drawer" onclick="toggleCart(false)"></div>
+
+    <footer>
+        <div class="footer-col">
+            <h4>LUXE STORE</h4>
+            <p>Redefinindo o luxo acessível.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Institucional</h4>
+            <a href="#">Quem Somos</a>
+            <a href="#">Política de Privacidade</a>
+        </div>
+        <div class="footer-col">
+            <h4>Atendimento</h4>
+            <p>sac@luxestore.com.br</p>
+            <p>(11) 98888-7777</p>
+        </div>
+    </footer>
+    <div class="footer-bottom">© 2026 LUXE STORE — Todos os direitos reservados.</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
